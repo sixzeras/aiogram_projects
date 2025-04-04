@@ -1,11 +1,17 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram import F
+from dotenv import load_dotenv
 import logging
+import os
 
-BOT_TOKEN = '7983523138:AAGyb3InyJzFKasxzTqTtv72X5kpwYpsSNo' #токен бота
+
+load_dotenv()
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
 
 logging.basicConfig(level=logging.INFO)
+
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
